@@ -1,0 +1,55 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["airbnb", "plugin:react/recommended", "plugin:import/typescript", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "warn",
+      {
+        "singleQuote": true,
+        "printWidth": 150,
+        "endOfLine": "auto",
+        "semi": true
+      }
+    ],
+    "react/self-closing-comp": ["warn"],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+      "ts": "never",
+      "tsx": "never"
+      }
+    ],
+    "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
+    "import/first": 0,
+    "import/prefer-default-export": 0,
+    "react/function-component-definition": 0,
+    "@typescript-eslint/no-unused-vars": 0,
+    "react/react-in-jsx-scope": 0,
+    "@typescript-eslint/member-delimiter-style": 0,
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/no-use-before-define": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-non-null-assertion": 0,
+    "@typescript-eslint/no-shadow": ["error"],
+    "no-shadow": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+  }
+  }
+}
