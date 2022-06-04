@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { FetchFunction } from 'types';
 
 const api = axios.create({
   baseURL: 'https://api.themoviedb.org/3',
@@ -8,10 +9,11 @@ const api = axios.create({
   },
 });
 
-export const getPopularMovies = (page = 1) => api.get(`/movie/popular&${page}`).then((response) => response.data);
-export const getMovies = (page = 1) => api.get(`/discover/movie&${page}`).then((response) => response.data);
-export const getNowPlayingMovies = (page = 1) => api.get(`/movie/now_playing&${page}`).then((response) => response.data);
-export const getTopRatedMovies = (page = 1) => api.get(`/movie/top_rated&${page}`).then((response) => response.data);
-export const getActionMovies = (page = 1) => api.get(`/discover/movie&with_geners=28&page=${page}`).then((response) => response.data);
-export const getHorrorMovies = (page = 1) => api.get(`/discover/movie&with_geners=27&${page}`).then((response) => response.data);
-export const getRomanceMovies = (page = 1) => api.get(`/discover/movie&with_geners=10749&${page}`).then((response) => response.data);
+export const getPopularMovies: FetchFunction = (page = 1) => api.get(`/movie/popular?page=${page}`).then((response) => response.data);
+export const getMovies: FetchFunction = (page = 1) => api.get(`/discover/movie?page=${page}`).then((response) => response.data);
+export const getNowPlayingMovies: FetchFunction = (page = 1) => api.get(`/movie/now_playing?page=${page}`).then((response) => response.data);
+export const getTopRatedMovies: FetchFunction = (page = 1) => api.get(`/movie/top_rated?page=${page}`).then((response) => response.data);
+export const getActionMovies: FetchFunction = (page = 1) => api.get(`/discover/movie?with_genres=28&page=${page}`).then((response) => response.data);
+export const getHorrorMovies: FetchFunction = (page = 1) => api.get(`/discover/movie?with_genres=27&page=${page}`).then((response) => response.data);
+export const getRomanceMovies: FetchFunction = (page = 1) =>
+  api.get(`/discover/movie?with_genres=10749&page=${page}`).then((response) => response.data);
