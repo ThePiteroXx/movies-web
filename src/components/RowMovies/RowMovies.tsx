@@ -77,42 +77,19 @@ const RowMovies: React.FC<RowMovie> = ({ fetchMovie, queryKey, title, main }) =>
     }
   };
 
-  // const throttle = (cb: (...args: any) => any, delay = 1000) => {
-  //   let shouldWait = false;
-  //   let waitingArgs: any;
-  //   const timeoutFunc = () => {
-  //     if (waitingArgs == null) {
-  //       shouldWait = false;
-  //     } else {
-  //       cb(...waitingArgs);
-  //       waitingArgs = null;
-  //       setTimeout(timeoutFunc, delay);
-  //     }
-  //   };
-
-  //   return (...args: any) => {
-  //     if (shouldWait) {
-  //       waitingArgs = args;
-  //       return;
-  //     }
-
-  //     cb(...args);
-  //     shouldWait = true;
-  //     setTimeout(timeoutFunc, delay);
-  //   };
-  // };
-
   return (
-    <div className='my-5 overflow-hidden'>
+    <div className={`my-5 overflow-hidden ${main && 'lg:my-10'}`}>
       <strong className={`${main ? 'text-2xl' : 'text-xl'} ml-[28px] self-start text-zinc-200 capitalize`}>{title}</strong>
       <div className='relative flex justify-center group'>
         <span
           style={{ width: `${paddingSlider}px` }}
           onClick={() => handleClickArrow('left')}
-          onKeyDown={() => handleClickArrow('left')}
+          onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => {
+            if (e.key === 'Enter') handleClickArrow('left');
+          }}
           role='button'
           tabIndex={0}
-          className='min-h-max flex justify-center items-center z-10 lg:opacity-0 lg:group-hover:opacity-100 lg:transition-opacity'
+          className='min-h-max flex justify-center items-center z-10 focus:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 lg:transition-opacity'
         >
           <Arrow className='w-full h-[60px]' />
         </span>
@@ -133,10 +110,12 @@ const RowMovies: React.FC<RowMovie> = ({ fetchMovie, queryKey, title, main }) =>
         <span
           style={{ width: `${paddingSlider}px` }}
           onClick={() => handleClickArrow('right')}
-          onKeyDown={() => handleClickArrow('right')}
+          onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => {
+            if (e.key === 'Enter') handleClickArrow('right');
+          }}
           role='button'
           tabIndex={0}
-          className='min-h-max flex justify-center items-center z-10 lg:opacity-0 lg:group-hover:opacity-100 lg:transition-opacity'
+          className='min-h-max flex justify-center items-center z-10 focus:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 lg:transition-opacity'
         >
           <Arrow className='rotate-180 w-full h-[60px]' />
         </span>
