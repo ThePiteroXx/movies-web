@@ -1,4 +1,5 @@
 export type FetchFunction = (page?: number) => Promise<any>;
+export type SearchFunction = (keyword: string) => Promise<any>;
 
 export type Movie = {
   id: number;
@@ -15,4 +16,5 @@ export enum CategoryQuery {
   ACTION = 'actionMovies',
   HORROR = 'horrorMovies',
   ROMANCE = 'romanceMovies',
+  SEARCH = 'searchMovie',
 }
