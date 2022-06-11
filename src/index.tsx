@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools';
 import { MovieContextProvider } from 'context/MovieContext';
 
 import './index.css';
@@ -15,7 +14,6 @@ root.render(
     <QueryClientProvider client={queryClient}>
       <MovieContextProvider>
         <App />
-        <ReactQueryDevtools />
       </MovieContextProvider>
     </QueryClientProvider>
   </React.StrictMode>,
