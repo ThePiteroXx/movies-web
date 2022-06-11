@@ -15,12 +15,12 @@ type RowMovie = {
   main?: boolean;
 };
 
-let paddingSlider = 20; // one side padding of the slider (w-[calc(100%-40px)])
+let PADDING_SLIDER = 20; // one side padding of the slider (w-[calc(100%-40px)])
 
 if (window.innerWidth > 640) {
-  paddingSlider = 30;
+  PADDING_SLIDER = 30;
 } else if (window.innerWidth > 768) {
-  paddingSlider = 40;
+  PADDING_SLIDER = 40;
 }
 
 const RowMovies: React.FC<RowMovie> = ({ fetchMovie, queryKey, title, main }) => {
@@ -44,7 +44,7 @@ const RowMovies: React.FC<RowMovie> = ({ fetchMovie, queryKey, title, main }) =>
       const firstMovieRect = firstMovieItemDOM.getBoundingClientRect();
       const lastMovieRect = lastMovieItemDOM.getBoundingClientRect();
       const widthSlider = slider.current.offsetWidth;
-      const distanceLastElement = Math.round(lastMovieRect.right) - widthSlider - paddingSlider; // distance to last movie
+      const distanceLastElement = Math.round(lastMovieRect.right) - widthSlider - PADDING_SLIDER; // distance to last movie
 
       if (direction === 'right') {
         // check if movieItems contain in slider view
@@ -64,7 +64,7 @@ const RowMovies: React.FC<RowMovie> = ({ fetchMovie, queryKey, title, main }) =>
       if (direction === 'left') {
         if (Math.abs(firstMovieRect.left) <= widthSlider) {
           // check if movieItem is at the beginning position
-          if (Math.round(firstMovieRect.left) - paddingSlider === 0) {
+          if (Math.round(firstMovieRect.left) - PADDING_SLIDER === 0) {
             setSliderPosition((prev) => (prev -= distanceLastElement)); // set slider to last movie
             nextPage(true);
           } else {
@@ -82,9 +82,9 @@ const RowMovies: React.FC<RowMovie> = ({ fetchMovie, queryKey, title, main }) =>
       <strong className={`${main ? 'text-2xl' : 'text-xl'} ml-[28px] self-start text-zinc-200 capitalize`}>{title}</strong>
       <div className='relative flex justify-center group'>
         <span
-          style={{ width: `${paddingSlider}px` }}
+          style={{ width: `${PADDING_SLIDER}px` }}
           onClick={() => handleClickArrow('left')}
-          onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => {
+          onKeyDown={(e) => {
             if (e.key === 'Enter') handleClickArrow('left');
           }}
           role='button'
@@ -96,7 +96,7 @@ const RowMovies: React.FC<RowMovie> = ({ fetchMovie, queryKey, title, main }) =>
         {status === 'loading' && <SkeletonSlider main={main} />}
         {status === 'success' && (
           <motion.div
-            style={{ width: `calc(100% - ${paddingSlider * 2}px)` }}
+            style={{ width: `calc(100% - ${PADDING_SLIDER * 2}px)` }}
             className={`flex ${main ? 'items-center' : 'mt-8 flex-start'}`}
             animate={{ x: `${sliderPosition}px` }}
             ref={slider}
@@ -108,9 +108,9 @@ const RowMovies: React.FC<RowMovie> = ({ fetchMovie, queryKey, title, main }) =>
         )}
 
         <span
-          style={{ width: `${paddingSlider}px` }}
+          style={{ width: `${PADDING_SLIDER}px` }}
           onClick={() => handleClickArrow('right')}
-          onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => {
+          onKeyDown={(e) => {
             if (e.key === 'Enter') handleClickArrow('right');
           }}
           role='button'
