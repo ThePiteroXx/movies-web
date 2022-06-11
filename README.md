@@ -1,46 +1,78 @@
-# Getting Started with Create React App
+<div id="top"></div>
+<h3 align="center">Diet app</h3>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Project Overview 🎉
+It's a Netflix-inspired landing page where you can search for any movie you want. During the development of this site I practiced skills such as typescript and tailwind.
 
-In the project directory, you can run:
+## Tech/framework used 🔧
 
-### `npm start`
+| Tech                                                    | Description                              |
+| ------------------------------------------------------- | ---------------------------------------- |
+| [React](https://reactjs.org/)                           | Library for building user interfaces     |
+| [Typescript](https://www.typescriptlang.org/)           | JavaScript with syntax for types|
+| [Tailwindcss](https://tailwindcss.com/)                | CSS framework  |
+| [React Query](https://react-query.tanstack.com/)        | Performant and powerful data synchronization for React  |
+| [Framer motion](https://www.framer.com/motion/)         | A production-ready motion library for React|
+| [Axios](https://github.com/axios/axios)         | Promise based HTTP client for the browser and node.js|
+| [Husky](https://github.com/okonet/lint-staged)          | Pre-commit tool                          |
+| [Lint-staged](https://github.com/okonet/lint-staged)    | Pre-commit tool                          |
+| [Eslint](https://eslint.org/)                           | Javascript Linter                        |
+| [Prettier](https://prettier.io/)                        | Code formatter                           |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Screenshots 📺
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/80220881/173207669-23333868-e4c4-4c41-a5f2-07884dc34e17.png" alt="Screenshot">
+</p>
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Info
 
-### `npm run build`
+My node version - v16.14.3 
+* npm
+  ```sh
+  npm node --version
+  ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repo
+   ```sh
+   git clone https://github.com/ThePiteroXx/movies-web.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Enter your API KEYS config in `.env`
+   ```env
+    REACT_APP_API_TOKEN=<your_token(themoviedb.org)>
+   ```
+4. Open local server
+    ```sh
+   npm run start
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### `npm run eject`
+## Available scripts
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+| Command                   | Description                   |
+| ------------------------- | ----------------------------- |
+| `npm run start`           | Open local server             |     
+| `npm run build`           | Create optimized build        |    
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Live 📍
 
-## Learn More
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License 🔱
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
