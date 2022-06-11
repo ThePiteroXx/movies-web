@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FetchFunction } from 'types';
+import { FetchFunction, SearchFunction } from 'types';
 
 const api = axios.create({
   baseURL: 'https://api.themoviedb.org/3',
@@ -17,3 +17,5 @@ export const getActionMovies: FetchFunction = (page = 1) => api.get(`/discover/m
 export const getHorrorMovies: FetchFunction = (page = 1) => api.get(`/discover/movie?with_genres=27&page=${page}`).then((response) => response.data);
 export const getRomanceMovies: FetchFunction = (page = 1) =>
   api.get(`/discover/movie?with_genres=10749&page=${page}`).then((response) => response.data);
+
+export const searchMovie: SearchFunction = (keyword: string) => api.get(`/search/movie?query=${keyword}`).then((response) => response.data);
