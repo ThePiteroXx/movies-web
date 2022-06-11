@@ -4,10 +4,12 @@ import { CategoryQuery } from 'types';
 
 import RowMovies from 'components/RowMovies/RowMovies';
 import Header from 'components/Header/Header';
+import Navbar from 'components/Navbar/Navbar';
 
 const App = () => {
   return (
     <div className='app font-sans'>
+      <Navbar />
       <Header />
       <section className='lg:mt-[-280px]'>
         <RowMovies fetchMovie={api.getPopularMovies} queryKey={CategoryQuery.POPULAR} main />
