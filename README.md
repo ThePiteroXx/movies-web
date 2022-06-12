@@ -68,6 +68,7 @@ My node version - v16.14.3
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Live 📍
+https://moviestan.netlify.app
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
